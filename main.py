@@ -519,7 +519,7 @@ def student_attendance():
 
 
 # =========================
-# RUN APP
+# RUN APP 
 # =========================
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0.")
