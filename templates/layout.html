@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student ERP System</title>
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <div class="navbar">
+
+        <div class="logo">
+            <h2>🎓 ERP System</h2>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            {% if session.get('role') == 'Admin' %}
+                <a href="/admin_dashboard">Dashboard</a>
+                <a href="/students">Students</a>
+                <a href="/teachers">Teachers</a>
+                <a href="/courses">Courses</a>
+                <a href="/marks">Marks</a>
+                <a href="/fees">Fees</a>
+                <a href="/notices">Notices</a>
+                <a href="/reports">Reports</a>
+                <a href="/settings">Settings</a>
+
+            {% elif session.get('role') == 'Teacher' %}
+                <a href="/teacher_dashboard">Dashboard</a>
+                <a href="/assignment">Assignment</a>
+                <a href="/marks">Marks</a>
+                <a href="/attendance">Attendance</a>
+                <a href="/notices">Notices</a>
+
+            {% elif session.get('role') == 'Student' %}
+                <a href="/student_dashboard">Dashboard</a>
+                <a href="/student/profile">Profile</a>
+                <a href="/student/marks">Marks</a>
+                <a href="/student/fees">Fees</a>
+                <a href="/student/courses">Courses</a>
+                <a href="/student/notices">Notices</a>
+                <a href="/student/attendance">Attendance</a>
+
+            {% endif %}
+
+            {% if session.get('user_id') %}
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/">Login</a>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <!-- ================= CONTENT AREA ================= -->
+    <div class="content">
+
+        {% block content %}
+        <!-- Page content will be inserted here -->
+        {% endblock %}
+
+    </div>
+
+</body>
+</html>

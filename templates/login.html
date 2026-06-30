@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Tracker ERP - Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left-panel">
+            <h1>Student Information Tracker ERP</h1>
+            <p>
+                A Role-Based Enterprise Resource Planning System for
+                Student Information Management.
+            </p>
+
+            <ul>
+                <li>✔ Student Management</li>
+                <li>✔ Attendance Management</li>
+                <li>✔ Marks Management</li>
+                <li>✔ Fee Management</li>
+                <li>✔ Reports & Analytics</li>
+            </ul>
+        </div>
+
+        <div class="right-panel">
+
+            <form action="{{ url_for('login') }}" method="POST">
+
+                <h2>Login</h2>
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="error-message">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <div class="input-box">
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+                        required>
+                </div>
+
+                <div class="input-box">
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter Password"
+                        required>
+                </div>
+
+                <div class="input-box">
+                    <label>Login As</label>
+
+                    <select name="role" required>
+
+                        <option value="">Select Role</option>
+
+                        <option value="Admin">
+                            Admin
+                        </option>
+
+                        <option value="Teacher">
+                            Teacher
+                        </option>
+
+                        <option value="Student">
+                            Student
+                        </option>
+
+                    </select>
+                </div>
+
+                <button type="submit">
+                    LOGIN
+                </button>
+
+                <div class="bottom-links">
+
+                    <a href="{{ url_for('register') }}">
+                        Create Account
+                    </a>
+
+                    <br><br>
+
+                    <a href="{{ url_for('forgot_password') }}">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}Notice Board{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Notice Board</h1>
+    <p>View the latest notices and announcements.</p>
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Audience</th>
+                <th>Priority</th>
+                <th>Description</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for notice in notices %}
+
+            <tr>
+
+                <td>{{ notice.notice_date }}</td>
+                <td>{{ notice.title }}</td>
+                <td>{{ notice.audience }}</td>
+                <td>{{ notice.priority }}</td>
+                <td>{{ notice.description }}</td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

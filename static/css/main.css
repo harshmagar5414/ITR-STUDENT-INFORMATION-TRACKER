@@ -1,0 +1,276 @@
+/* =========================================================
+   GLOBAL STYLE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #93c5fd;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.page-header h1 {
+    font-size: 28px;
+}
+
+.page-header p {
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h1 {
+    font-size: 30px;
+    color: #1e40af;
+}
+
+.card h3 {
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+/* =========================================================
+   TABLE DESIGN
+========================================================= */
+
+.table-container {
+    margin: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #1e40af;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+table tr:hover {
+    background: #f3f4f6;
+}
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+.form-container {
+    margin: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+    background: #2563eb;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.delete-btn {
+    background: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.search-box {
+    margin: 20px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 260px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    width: 420px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+.login-container {
+    width: 360px;
+    margin: 100px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}My Marks{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>My Marks</h1>
+    <p>View your examination results.</p>
+</div>
+
+<div class="card-container">
+
+    <div class="card">
+        <h3>Total Subjects</h3>
+        <h1>{{ total_subjects }}</h1>
+    </div>
+
+    <div class="card">
+        <h3>Passed Subjects</h3>
+        <h1>{{ passed_subjects }}</h1>
+    </div>
+
+    <div class="card">
+        <h3>Average Marks</h3>
+        <h1>{{ average_marks }}%</h1>
+    </div>
+
+</div>
+
+<br>
+
+<div class="table-container">
+
+<h2>Marks Details</h2>
+
+<table>
+
+<thead>
+
+<tr>
+    <th>Subject</th>
+    <th>Semester</th>
+    <th>Maximum Marks</th>
+    <th>Obtained Marks</th>
+    <th>Grade</th>
+    <th>Result</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for mark in marks %}
+
+<tr>
+
+<td>{{ mark.subject }}</td>
+<td>{{ mark.semester }}</td>
+<td>{{ mark.max_marks }}</td>
+<td>{{ mark.obtained_marks }}</td>
+<td>{{ mark.grade }}</td>
+<td>{{ mark.result }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

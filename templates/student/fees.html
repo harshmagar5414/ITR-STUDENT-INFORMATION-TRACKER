@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}My Fees{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Fee Details</h1>
+    <p>View your fee payment information.</p>
+</div>
+
+<div class="card-container">
+
+    <div class="card">
+        <h3>Total Fee</h3>
+        <h1>₹{{ total_fee }}</h1>
+    </div>
+
+    <div class="card">
+        <h3>Paid Fee</h3>
+        <h1>₹{{ paid_fee }}</h1>
+    </div>
+
+    <div class="card">
+        <h3>Pending Fee</h3>
+        <h1>₹{{ remaining_fee }}</h1>
+    </div>
+
+</div>
+
+<br>
+
+<div class="table-container">
+
+<h2>Fee Payment History</h2>
+
+<table>
+
+<thead>
+
+<tr>
+    <th>Academic Year</th>
+    <th>Total Fee</th>
+    <th>Paid Fee</th>
+    <th>Remaining Fee</th>
+    <th>Payment Date</th>
+    <th>Payment Mode</th>
+    <th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for fee in fees %}
+
+<tr>
+
+<td>{{ fee.academic_year }}</td>
+<td>₹{{ fee.total_fee }}</td>
+<td>₹{{ fee.paid_fee }}</td>
+<td>₹{{ fee.remaining_fee }}</td>
+<td>{{ fee.payment_date }}</td>
+<td>{{ fee.payment_mode }}</td>
+<td>{{ fee.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}
