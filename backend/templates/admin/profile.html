@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Admin Profile{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>My Profile</h1>
+    <p>Administrator Profile Information</p>
+</div>
+
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <div class="profile-image">
+            <img src="{{ url_for('static', filename='images/admin.png') }}" alt="Admin">
+        </div>
+
+        <h2>{{ profile.fullname }}</h2>
+
+        <p><strong>Role :</strong> {{ profile.role }}</p>
+
+        <hr>
+
+        <table>
+
+            <tr>
+                <td><strong>Username</strong

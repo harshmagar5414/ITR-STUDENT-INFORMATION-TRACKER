@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Student Profile</h1>
+    <p>View your personal information.</p>
+</div>
+
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <img src="{{ url_for('static', filename='images/student.png') }}"
+             alt="Student"
+             class="profile-image">
+
+        <h2>{{ student.fullname }}</h2>
+        <p>{{ student.department }}</p>
+
+        <table class="profile-table">
+
+            <tr>
+                <th>Student ID</th>
+                <td>{{ student.student_id }}</td>
+            </tr>
+
+            <tr>
+                <th>Roll Number</th>
+                <td>{{ student.roll_no }}</td>
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td>{{ student.email }}</td>
+            </tr>
+
+            <tr>
+                <th>Mobile</th>
+                <td>{{ student.mobile }}</td>
+            </tr>
+
+            <tr>
+                <th>Gender</th>
+                <td>{{ student.gender }}</td>
+            </tr>
+
+            <tr>
+                <th>Date of Birth</th>
+                <td>{{ student.dob }}</td>
+            </tr>
+
+            <tr>
+                <th>Department</th>
+                <td>{{ student.department }}</td>
+            </tr>
+
+            <tr>
+                <th>Year</th>
+                <td>{{ student.year }}</td>
+            </tr>
+
+            <tr>
+                <th>Semester</th>
+                <td>{{ student.semester }}</td>
+            </tr>
+
+            <tr>
+                <th>Address</th>
+                <td>{{ student.address }}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

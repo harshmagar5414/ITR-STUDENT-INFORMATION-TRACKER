@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}My Courses{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>My Courses</h1>
+    <p>View your enrolled courses.</p>
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>Credits</th>
+                <th>Faculty</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for course in courses %}
+
+            <tr>
+
+                <td>{{ course.course_code }}</td>
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.department }}</td>
+                <td>{{ course.semester }}</td>
+                <td>{{ course.credits }}</td>
+                <td>{{ course.faculty }}</td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

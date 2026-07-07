@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ERP - Register</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left-panel">
+
+        <h1>Student Information Tracker ERP</h1>
+
+        <p>
+            Create a new account to access the ERP System.
+        </p>
+
+        <ul>
+            <li>✔ Student Records</li>
+            <li>✔ Attendance Management</li>
+            <li>✔ Marks Management</li>
+            <li>✔ Fee Management</li>
+            <li>✔ Reports & Dashboard</li>
+        </ul>
+
+    </div>
+
+    <div class="right-panel">
+
+        <form action="{{ url_for('register') }}" method="POST">
+
+            <h2>Create Account</h2>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="message">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <div class="input-box">
+                <label>Full Name</label>
+                <input type="text" name="fullname" placeholder="Enter Full Name" required>
+            </div>
+
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Choose Username" required>
+            </div>
+
+            <div class="input-box">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter Email Address" required>
+            </div>
+
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Create Password" required>
+            </div>
+
+            <div class="input-box">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+
+            <div class="input-box">
+                <label>Register As</label>
+
+                <select name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+
+            <button type="submit">
+                REGISTER
+            </button>
+
+            <div class="bottom-links">
+                Already have an account?
+                <a href="{{ url_for('home') }}">Login

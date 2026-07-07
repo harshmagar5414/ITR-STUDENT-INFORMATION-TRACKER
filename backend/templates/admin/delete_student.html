@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Delete Student{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Delete Student</h1>
+    <p>Search and delete a student record.</p>
+</div>
+
+<div class="form-container">
+
+    <form action="{{ url_for('delete_student') }}" method="POST">
+
+        <div class="form-group">
+
+            <label>Student ID</label>
+
+            <input
+                type="text"
+                name="student_id"
+                placeholder="Enter Student ID"
+                required>
+
+        </div>
+
+        <div class="button-group">
+
+            <button type="submit" class="delete-btn">
+                Delete Student
+            </button>
+
+            <button type="reset" class="reset-btn">
+                Clear
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+<br>
+
+<div class="table-container">
+
+    <h2>Student Records</h2>
+
+    <table>
+
+        <thead>

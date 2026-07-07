@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Fee Management{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Fee Management</h1>
+    <p>Manage student fee records.</p>
+</div>
+
+<div class="form-container">
+
+    <form action="{{ url_for('fees') }}" method="POST">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Student ID</label>
+                <input type="text" name="student_id" required>
+            </div>
+
+            <div class="form-group">
+                <label>Student Name</label>
+                <input type="text" name="student_name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Department</label>
+                <input type="text" name="department" required>
+            </div>
+
+            <div class="form-group">
+                <label>Academic Year</label>
+                <input type="text" name="academic_year" placeholder="2026-2027" required>
+            </div>
+
+            <div class="form-group">
+                <label>Total Fee
